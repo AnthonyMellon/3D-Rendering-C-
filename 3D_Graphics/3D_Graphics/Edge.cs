@@ -34,7 +34,7 @@ namespace _3D_Graphics
             //Package points into an array so the can be returned easily
             vertex[] points = new vertex[2];
             points[0] = point1;
-            points[2] = point2;
+            points[1] = point2;
 
             return points;
         }

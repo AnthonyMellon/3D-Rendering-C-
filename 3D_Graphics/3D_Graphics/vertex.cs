@@ -51,5 +51,14 @@ namespace _3D_Graphics
             position = newPosition;
             return position;
         }
+        
+        /// <summary>
+        /// Used to get the position of the vertex
+        /// </summary>
+        /// <returns> The 3D position of the vertex </returns>
+        public Vector3f getPosition()
+        {
+            return position;
+        }
     }
 }

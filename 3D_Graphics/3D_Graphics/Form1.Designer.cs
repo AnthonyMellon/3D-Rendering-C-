@@ -47,6 +47,7 @@ namespace _3D_Graphics
             this.gamePanel.Name = "gamePanel";
             this.gamePanel.Size = new System.Drawing.Size(946, 502);
             this.gamePanel.TabIndex = 0;
+            this.gamePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.gamePanel_Paint);
             // 
             // Form1
             // 
