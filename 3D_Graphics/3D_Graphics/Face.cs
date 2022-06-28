@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace _3D_Graphics
 {    
@@ -15,17 +16,21 @@ namespace _3D_Graphics
         public Edge edge2;
         public Edge edge3;
 
+        public Color color;
+
         /// <summary>
         /// Creates a triangluar face from three edges
         /// </summary>
         /// <param name="edge1"> The first edge of the face </param>
         /// <param name="edge2"> The second edge of the face </param>
         /// <param name="edge3"> The third edge of the face </param>
-        public Face(Edge edge1, Edge edge2, Edge edge3)
+        /// <param name="color"> The color of the face </param>
+        public Face(Edge edge1, Edge edge2, Edge edge3, Color color)
         {
             this.edge1 = edge1;
             this.edge2 = edge2;
             this.edge3 = edge3;
+            this.color = color;
         }
 
         /// <summary>
@@ -41,7 +46,7 @@ namespace _3D_Graphics
             edges[2] = edge3;
 
             return edges;
-        }
+        }        
 
         /// <summary>
         /// Translates the face along the x, y, z axis by the given values
