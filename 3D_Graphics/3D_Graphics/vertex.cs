@@ -12,7 +12,7 @@ namespace _3D_Graphics
         private Vector3f position;
 
         /// <summary>
-        /// A vertex representing a point on an object
+        /// Creates a vertex
         /// </summary>
         /// <param name="position"> the (x, y, z) position of the vertex </param>
         public vertex(Vector3f position)
