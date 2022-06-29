@@ -21,11 +21,34 @@ namespace _3D_Graphics
         }
 
         /// <summary>
-        /// Rotates the vertex around a given point !!!To be implemented!!!
+        /// Rotates the vertex around a given radius !!!To be implemented!!!
         /// </summary>
-        /// <returns> The new postion of the vertex </returns>
-        public Vector3f rotateAround()
+        /// <param name="anchorPoint"> The point to rotate around </param>
+        /// <param name="axis"> The axis of rotation </param>
+        /// <param name="angleRad"> The angle of rotation in radians </param>
+        /// <returns> The new position of the vertex </returns>
+        public Vector3f rotate(Vector3f anchorPoint, int axis, float angleRad)
         {
+            //Take vector components not on rotational axis for rotation point and anchor point
+            List<float> pos2D = position.AsList();
+            float oldPoint = pos2D[axis];
+            pos2D.RemoveAt(axis);
+
+            List<float> anchor2D = anchorPoint.AsList();
+            anchor2D.RemoveAt(axis);
+
+            //Rotate the point
+            float xRot = (float)(Math.Cos(angleRad) * (pos2D[0] - anchor2D[0]) - Math.Sin(angleRad) * (pos2D[1] - anchor2D[1]) + anchor2D[0]);
+            float yRot = (float)(Math.Sin(angleRad) * (pos2D[0] - anchor2D[0]) + Math.Cos(angleRad) * (pos2D[1] - anchor2D[1]) + anchor2D[1]);
+            pos2D[0] = xRot;
+            pos2D[1] = yRot;
+
+            //Re-insert vector components not on rotational axis into the position
+            pos2D.Insert(axis, oldPoint);
+            position.fromList(pos2D);
+            Console.WriteLine($"Position2D: ({pos2D[0]}, {pos2D[1]})");
+            Console.WriteLine($"Position: ({position})");
+
             return position;
         }
 

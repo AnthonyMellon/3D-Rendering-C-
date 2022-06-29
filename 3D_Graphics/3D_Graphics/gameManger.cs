@@ -23,13 +23,14 @@ namespace _3D_Graphics
         public void setup()
         {
             drawer = new Drawer(gameGraphics);
-            myTriangle = ObjectUtils.create2DTriangle(new Vector3f(200, 200, 0), 100);
+            myTriangle = ObjectUtils.create2DTriangle(new Vector3f(200, 200, 0), new Vector3f(0, 0, 0), 100);
+            
         }
 
         public void loop()
         {
-            
-            drawer.drawObject(myTriangle);
+            myTriangle.rotate(2, 1);
+            drawer.drawObject(myTriangle);            
         }
     }
 }

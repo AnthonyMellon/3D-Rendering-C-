@@ -9,9 +9,9 @@ namespace _3D_Graphics
 {
     static class ObjectUtils
     {
-        public static Object create2DTriangle(Vector3f position, float size)
+        public static Object create2DTriangle(Vector3f position, Vector3f rotation, float size)
         {
-            Object triangle = new Object(position);
+            Object triangle = new Object(position, rotation);
 
             //Setup the three vertices
             Vector3f p1 = new Vector3f(position.X, position.Y - size / 2, position.Z); //Top vertex

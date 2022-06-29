@@ -24,6 +24,35 @@ namespace _3D_Graphics
             this.Z = Z;
         }
 
+        public float[] AsArray()
+        {
+            return new float[] { X, Y, Z };
+        }
+
+        public void fromArray(float[] array)
+        {
+            X = array[0];
+            Y = array[1];
+            Z = array[2];
+        }
+
+        public List<float> AsList()
+        {
+            return new List<float>() { X, Y, Z };
+        }
+
+        public void fromList(List<float> list)
+        {
+            X = list[0];
+            Y = list[1];
+            Z = list[2];
+        }
+
+        public override string ToString()
+        {
+            return $"{X}, {Y}, {Z}";
+        }
+
         public float X { get; set; }
         public float Y { get; set; }
         public float Z { get; set; }
